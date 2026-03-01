@@ -1,0 +1,40 @@
+{
+  "agent_name": "Product Recommendation Agent",
+  "agent_id": "69a43373bab6fd30b13966d0",
+  "description": "Conversational agent that understands customer needs, searches product/services knowledge base, and delivers personalized recommendations considering budget, use case, purchase history context, and browsing behavior. Asks qualifying questions when requirements are vague.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "qualifying_question": "string",
+    "recommendations": [
+      {
+        "name": "string",
+        "price": "string",
+        "features": [
+          "string"
+        ],
+        "fit_reason": "string"
+      }
+    ],
+    "follow_up_suggestions": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "qualifying_question": "sample",
+    "recommendations": [
+      {
+        "name": "Product name",
+        "price": "Product price",
+        "features": [
+          "sample string"
+        ],
+        "fit_reason": "Why this product fits the customer's needs"
+      }
+    ],
+    "follow_up_suggestions": [
+      "sample string"
+    ]
+  }
+}

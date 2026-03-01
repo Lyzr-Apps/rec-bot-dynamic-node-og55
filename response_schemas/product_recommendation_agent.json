@@ -1,0 +1,46 @@
+{
+  "agent_id": "69a43373bab6fd30b13966d0",
+  "agent_name": "Product Recommendation Agent",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "rag_id": "69a4336000c2d274880f8a51",
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "ProductRecommendationResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "qualifying_question": {
+            "type": ["string", "null"],
+            "description": "A qualifying question to ask if more information is needed, or null if enough info is available"
+          },
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string", "description": "Product name" },
+                "price": { "type": "string", "description": "Product price" },
+                "features": { "type": "array", "items": { "type": "string" }, "description": "Key product features" },
+                "fit_reason": { "type": "string", "description": "Why this product fits the customer's needs" }
+              },
+              "required": ["name", "price", "features", "fit_reason"],
+              "additionalProperties": false
+            },
+            "description": "List of product recommendations"
+          },
+          "follow_up_suggestions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Suggested follow-up actions or questions"
+          }
+        },
+        "required": ["qualifying_question", "recommendations", "follow_up_suggestions"],
+        "additionalProperties": false
+      }
+    }
+  }
+}
